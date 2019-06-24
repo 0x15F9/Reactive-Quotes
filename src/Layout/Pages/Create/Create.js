@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-const Create = () => {
-    return(
-        <div>Create</div>
-    );
+import CreateWizard from './CreateWizard/CreateWizard'
+import GetQuote from './GetQuote/GetQuote'
+
+class Create extends Component {
+    state = {
+        quote: "test"
+    }
+    render() {
+        return(
+            <div>
+                <CreateWizard />
+                <GetQuote {...this.state} />
+            </div>
+        );
+    }
 }
 
 export default Create;
