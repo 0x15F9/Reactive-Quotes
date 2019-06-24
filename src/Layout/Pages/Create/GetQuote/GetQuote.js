@@ -17,20 +17,23 @@ const useStyles = makeStyles(theme => ({
 
 const GetQuote = (props) => {
     const classes = useStyles();
-
+    
     return(
         <div>
-            {props.quote}
-        <TextField
-            id="standard-uncontrolled"
-            label="Quote"
-            defaultValue="foo"
-            className={classes.textField}
-            margin="normal"
-        />
-        <Button variant="outlined" className={classes.button}>
-        Next
-        </Button>
+            <TextField
+                id="standard-uncontrolled"
+                label="Quote"
+                defaultValue={ props.quote }
+                className={classes.textField}
+                margin="normal"
+                onChange={ (event) => props.updateQuote(event) }
+            />
+            <Button 
+                variant="outlined" 
+                className={classes.button}
+                onClick={ () => console.log("clicked") } >
+                Next
+            </Button>
         </div>
     )
 }
